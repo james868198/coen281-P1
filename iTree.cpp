@@ -25,7 +25,9 @@ iTree::iTree(vector<vector<double>> _features, int _limitHeight, int _dimension,
     level = _level;
     limitHeight = _limitHeight;
     usedDimension = rand() % _dimension;
-
+    left = nullptr;
+    right = nullptr;
+    
     // check
     if (_level >= _limitHeight || size <=1) {
         return;

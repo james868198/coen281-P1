@@ -18,7 +18,7 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    vector<vector<double>> features;
+    vector< vector<double> > features;
     vector<int> featureIds;
     int nTree = MinTree;
     int nSample = MaxSubSample;

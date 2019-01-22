@@ -19,13 +19,13 @@ using namespace std;
 
 class iForest {
 private:
-    vector<vector<double>> features;
+    vector< vector<double> > features;
     vector<double> anomalyScores;
     vector<int> featureIds;
     set<double> anomalyRank;
     
-    int nSample = 20;
-    int nTrees = 10;
+    int nSample;
+    int nTrees;
     int n;
     int dimension;
     int limitedTreeHeight;
@@ -40,7 +40,7 @@ private:
     map<double, int> mapAScoreIds;
     
 public:
-    iForest(vector<vector<double>> _features, int _nTrees, int _nSample, int _n, int _dimension, vector<int> _featureIds);
+    iForest(vector< vector<double> > _features, int _nTrees, int _nSample, int _n, int _dimension, vector<int> _featureIds);
     ~iForest();
     void createTrees();
     void findAnomalies(int k);

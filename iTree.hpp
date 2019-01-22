@@ -15,11 +15,11 @@ using namespace std;
 
 class iTree {
 private:
-    vector<vector<double>> features;
+    vector< vector<double> > features;
     int level; // Level of the tree
     int limitHeight;
-    iTree* left = nullptr;; // Pointer to left iTree
-    iTree* right = nullptr;; // Pointer to right iTree
+    iTree* left; // Pointer to left iTree
+    iTree* right; // Pointer to right iTree
     int size;
     int usedDimension;
     double splittedAt;
@@ -27,7 +27,7 @@ private:
     double H(int n); // Harmonic number
     double c(int n); // Avg path length of unsuccessful search in BST
 public:
-    iTree(vector<vector<double>> _features, int _limitHeight, int _dimension, int _level);
+    iTree(vector< vector<double> > _features, int _limitHeight, int _dimension, int _level);
     ~iTree();
     int runTreeAndGetLevel(vector<double> node);
     
