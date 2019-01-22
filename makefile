@@ -1,4 +1,4 @@
-Pn : main.cpp
-	g++ -o P1 main.cpp
+coen281-P1 : main.cpp
+        g++ -o coen281-P1 main.cpp
 clean:
-	rm -rf *.o P1
+        rm -rf *.o coen281-P1
