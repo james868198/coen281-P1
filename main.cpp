@@ -11,6 +11,8 @@
 #include "iForest.hpp"
 #include <string>
 #include <sstream>
+#include <stdlib.h>
+#include <stdio.h>
 
 #define MaxSubSample 256
 #define MinTree 100
@@ -39,13 +41,13 @@ int main(int argc, const char * argv[]) {
                 break;
             } else {
                 if (nCount == 0) {
-                    k = stoi(stdinput);
+                    k = atoi(stdinput.c_str());
                 } else {
                     stringstream inputStream(stdinput);
                     string element = "";
                     vector<double> feature;
                     while(getline(inputStream,element,',')){
-                        feature.push_back(stod(element));
+                        feature.push_back(strtod(element.c_str(),nullptr));
                     }
                     features.push_back(feature);
                 }
@@ -65,7 +67,7 @@ int main(int argc, const char * argv[]) {
             cin >> path; //"testData/test.dat";
             ifstream fin;
             
-            fin.open(path);
+            fin.open(path.c_str());
             if(!fin){
 //                throw "Found no file";
                 return 0;
@@ -73,13 +75,13 @@ int main(int argc, const char * argv[]) {
                 string line;
                 while(getline(fin,line,'\n')){
                     if (nCount == 0) {
-                        k = stoi(line);
+                        k = atoi(line.c_str());
                     } else {
                         stringstream linestream(line);
                         string element = "";
                         vector<double> feature;
                         while(getline(linestream,element,',')){
-                            feature.push_back(stod(element));
+                            feature.push_back(strtod(element.c_str(),nullptr));
                         }
                         features.push_back(feature);
                     }
@@ -127,5 +129,4 @@ int main(int argc, const char * argv[]) {
     iForest forest(features, nTree, nSample, nSize, nAttributes, featureIds);
     forest.createTrees();
     forest.findAnomalies(k);
-//    system("pause");
 }
