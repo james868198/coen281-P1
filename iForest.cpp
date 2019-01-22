@@ -10,8 +10,10 @@
 #include <set>
 #include <vector>
 #include <random>
+#include <math.h>
+#include <stdlib.h>
 
-iForest::iForest(vector<vector<double>> _features, int _nTrees, int _nSample, int _n, int _dimension, vector<int> _featureIds){
+iForest::iForest(vector< vector<double> > _features, int _nTrees, int _nSample, int _n, int _dimension, vector<int> _featureIds){
     n = _n;
     features = _features;
     featureIds = _featureIds;
@@ -40,7 +42,7 @@ void iForest::createTrees() {
     for (int i = 0; i<nTrees;i++) {
         random_shuffle(featureIds.begin(),featureIds.end());
         int * idHead = &featureIds[0];
-        vector<vector<double>> sampleFeatures;
+        vector< vector<double> > sampleFeatures;
         // check
         for( int j = 0; j < nSample; j++) {
             vector<double> temp;

@@ -11,10 +11,11 @@
 #include <vector>
 #include <iostream>
 #include <math.h>
+#include <stdlib.h>
 
 using namespace std;
 
-iTree::iTree(vector<vector<double>> _features, int _limitHeight, int _dimension, int _level) {
+iTree::iTree(vector< vector<double> > _features, int _limitHeight, int _dimension, int _level) {
 //    if (_level == 1) {
 //        cout<< "This is the first tree"<<endl;
 //    }
@@ -34,8 +35,8 @@ iTree::iTree(vector<vector<double>> _features, int _limitHeight, int _dimension,
     }
     
     // count
-    vector<vector<double>> leftFeatures;
-    vector<vector<double>> rightFeatures;
+    vector< vector<double> > leftFeatures;
+    vector< vector<double> > rightFeatures;
     set<double> Q;
 
     for(int j = 0; j < size; j++) {
