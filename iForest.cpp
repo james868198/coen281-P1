@@ -12,6 +12,7 @@
 #include <random>
 #include <math.h>
 #include <stdlib.h>
+#include <algorithm>
 
 iForest::iForest(vector< vector<double> > _features, int _nTrees, int _nSample, int _n, int _dimension, vector<int> _featureIds){
     n = _n;
