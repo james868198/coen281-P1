@@ -47,7 +47,7 @@ int main(int argc, const char * argv[]) {
                     string element = "";
                     vector<double> feature;
                     while(getline(inputStream,element,',')){
-                        feature.push_back(strtod(element.c_str(),nullptr));
+                        feature.push_back(strtod(element.c_str(), NULL));
                     }
                     features.push_back(feature);
                 }
@@ -81,7 +81,7 @@ int main(int argc, const char * argv[]) {
                         string element = "";
                         vector<double> feature;
                         while(getline(linestream,element,',')){
-                            feature.push_back(strtod(element.c_str(),nullptr));
+                            feature.push_back(strtod(element.c_str(), NULL));
                         }
                         features.push_back(feature);
                     }
