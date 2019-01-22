@@ -55,7 +55,7 @@ int main(int argc, const char * argv[]) {
         }
         
     }
-    catch( const std::invalid_argument& e ) {
+    catch( const exception & e ) {
         return 0;
     }
     // read by file
@@ -90,7 +90,7 @@ int main(int argc, const char * argv[]) {
             fin.close();
         }
     }
-    catch( const std::invalid_argument& e ) {
+    catch( const exception & e ) {
         return 0;
     }
     featureIds.pop_back();
